@@ -6,32 +6,44 @@ import CategoryGridTile from '../components/CategoryGridTile';
 import { CATEGORIES } from '../data/dummy-data';
 import HeaderButton from '../components/headerButton';
 
-const CategoriesScreen = props => {
+const CategoriesScreen = ({navigation}) => {
     const renderGridItem = (itemData) => {
         return(
+           
             <CategoryGridTile 
                 title={itemData.item.title}  
                 color ={itemData.item.color}
                 onSelect={()=> {
-                props.navigation.navigate({routeName: 'CategoryMeals', params:{
-                    categoryId: itemData.item.id}})      
+                // navigation.navigate({routeName: 'CategoryMeals', params:{
+                //     categoryId: itemData.item.id}})    
+                navigation.navigate('CategoryMeals',{
+                    categoryId: itemData.item.id
+                });
             }}/>
+          
         );
     }
 
     return(
+        <View>
+        <Button title='Press me' onPress={() => {
+            console.log('clicked')
+             navigation.navigate('CategoryMeals',{
+                categoryId: '1'})
+        }} />
        <FlatList data={CATEGORIES} renderItem={renderGridItem} numColumns={2} />
+       </View>
     )
 };
 
-CategoriesScreen.navigationOptions = navData => {
+export const screenOptions = navData => {
     return{
     headerTitle: "Meal Categories",
-    headerLeft: (<HeaderButtons HeaderButtonComponent={HeaderButton}>
-        <Item title="Menu" iconName='ios-menu' onPress={() => {
-            navData.navigation.toggleDrawer();
-        }}/>
-    </HeaderButtons>)
+    // headerLeft:() => (<HeaderButtons HeaderButtonComponent={HeaderButton}>
+    //     <Item title="Menu" iconName='ios-menu' onPress={() => {
+    //         navData.navigation.toggleDrawer();
+    //     }}/>
+    // </HeaderButtons>)
     }
 };
 

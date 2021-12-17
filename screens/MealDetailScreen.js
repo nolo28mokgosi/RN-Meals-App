@@ -13,8 +13,8 @@ const ListItem = props => {
     )
 }
 
-const MealDetailsScreen = props => {
-    const mealId = props.navigation.getParam('mealId');
+const MealDetailsScreen = ({route,navigation}) => {
+    const mealId = route.params.mealId;
     const selectedMeal = MEALS.find(meal => meal.id === mealId);
 
     return(
@@ -37,17 +37,17 @@ const MealDetailsScreen = props => {
     )
 };
 
-MealDetailsScreen.navigationOptions = (navigationData) => {
-    const mealId = navigationData.navigation.getParam('mealId');
+export const screenOptions = (navigationData) => {
+    const mealId = navigationData.route.params.mealId;
     const selectedMeal = MEALS.find(meal => meal.id = mealId);
     return {
         headerTitle: selectedMeal.title,
         // headerRight: <Text>FAV!</Text>
-        headerRight: <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        headerRight:() => (<HeaderButtons HeaderButtonComponent={HeaderButton}>
             <Item title='Favorite' iconName='ios-star' onPress={() => {
                 console.log('Logging FAV');
             }} />
-        </HeaderButtons>
+        </HeaderButtons>)
     }
 };
 

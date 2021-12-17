@@ -65,21 +65,22 @@ const FilterScreen = props => {
     )
 };
 
-FilterScreen.navigationOptions = navData => {
+export const screenOptions =  navData => {
     return{
         headerTitle: "Filter Meals",
-        headerLeft: (<HeaderButtons HeaderButtonComponent={HeaderButton}>
+        headerLeft: () => (<HeaderButtons HeaderButtonComponent={HeaderButton}>
             <Item title="Menu" iconName='ios-menu' onPress={() => {
                 navData.navigation.toggleDrawer();
             }}/>
         </HeaderButtons>),
-        headerRight:(
+        headerRight:() => (
             <HeaderButtons HeaderButtonComponent={HeaderButton}>
             <Item 
                 title="Save" 
                 iconName='ios-save' 
                 onPress={
-                    navData.navigation.getParam('save')
+                    () =>{}
+                    //navData.route.params.save
                 }/>
         </HeaderButtons>
         )

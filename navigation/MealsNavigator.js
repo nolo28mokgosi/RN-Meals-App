@@ -4,10 +4,10 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createDrawerNavigator } from 'react-navigation-drawer';
-
 import { Ionicons } from '@expo/vector-icons';
-
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+
+
 
 import CategoriesScreen from '../screens/CategoriesScreen';
 import CategoryMealScreen from '../screens/CategoryMealsScreen';
@@ -46,6 +46,7 @@ const defaultStackNavOptions = {
 },{
     defaultNavigationOptions:defaultStackNavOptions
 });
+
 
 const FavNavigator = createStackNavigator({
     Favorites: FavoriteScreen,
@@ -105,6 +106,5 @@ const MainNavigator = createDrawerNavigator({
         activeTintColor: Colors.accentColor
     }
 });
-// export default createAppContainer(MealsNavigator);
-//export default createAppContainer(MealsFavTabNavigator);
- export default createAppContainer(MainNavigator); //NOT WORKING AFTE ADDING THE MAIN NAVIGTOR> TOP ONE WORKS
+
+ export default createAppContainer(MainNavigator);//MainNavigator);

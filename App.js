@@ -2,13 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import MealsNavigator from './navigation/MealsNavigator';
+import RecipeNavigator from './navigation/RecipeNavigator';
 // import {enableScreens } from 'react-native-screens'; //Ensures RN uses native optimised screen components, great for performance
 // useScreens();
 
 export default function App() {
   return (
-    <MealsNavigator /> );
+    <RecipeNavigator /> );
 }
 
 const styles = StyleSheet.create({
