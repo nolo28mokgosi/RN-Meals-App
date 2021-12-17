@@ -87,7 +87,7 @@ const FilterNavigator = createStackNavigator({
     Filters: FilterScreen
 },{
     navigationOptions:{
-        drawerLabel: 'Favorites'
+        drawerLabel: 'Filter'
     },
     defaultNavigationOptions: defaultStackNavOptions
 });
