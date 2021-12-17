@@ -1,9 +1,9 @@
 import React from 'react';
 import {View,Text,StyleSheet,Button, FlatList, TouchableOpacity } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+
 import CategoryGridTile from '../components/CategoryGridTile';
 import { CATEGORIES } from '../data/dummy-data';
-
-import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import HeaderButton from '../components/headerButton';
 
 const CategoriesScreen = props => {
