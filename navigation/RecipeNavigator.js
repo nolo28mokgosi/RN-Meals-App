@@ -49,13 +49,25 @@ const FavNavigator = () =>{
     );
 }
 
-
 const Tab = createBottomTabNavigator();
 const MealsFavTabNavigator = () =>{
     return(
     <Tab.Navigator>
-        <Tab.Screen name="Mealss" component={MealsNavigator} />
-        <Tab.Screen name="Favorites" component={FavNavigator} />
+        <Tab.Screen name="Mealss" component={MealsNavigator} options={{ 
+            headerShown: false,
+            tabBarLabel: 'Meals!',
+            tabBarIcon: (tabInfo) => {
+                return <Ionicons name='ios-restaurant' size={25} color={tabInfo.tintColor} />
+            },
+            tabBarColor: Colors.primaryColor
+            }}/>
+        <Tab.Screen name="Favorites" component={FavNavigator} options={{
+            headerShown: false,
+            tabBarIcon: (tabInfo) => {
+                return <Ionicons name='ios-star' size={25} color={tabInfo.tintColor} />
+            },
+            tabBarColor: Colors.accentColor
+        }} />
     </Tab.Navigator>
     );
 }
@@ -73,13 +85,11 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () =>{
     return(
     <Drawer.Navigator  initialRouteName="MealsFav">
-         <Drawer.Screen name="MealsFav" component={MealsFavTabNavigator}/>
-        <Drawer.Screen name="Filter" component={FilterNavigator}/>
+         <Drawer.Screen name="MealsFav" component={MealsFavTabNavigator} options={{ headerShown: false}}/>
+        <Drawer.Screen name="Filter" component={FilterNavigator} options={{ headerShown: false}}/>
     </Drawer.Navigator>
     );
 }
-
-
 
 const AppNavigator = () => {
     return(

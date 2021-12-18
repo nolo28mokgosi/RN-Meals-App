@@ -26,12 +26,12 @@ const CategoriesScreen = ({navigation}) => {
 
     return(
         <View>
-        <Button title='Press me' onPress={() => {
-            console.log('clicked')
-             navigation.navigate('CategoryMeals',{
-                categoryId: '1'})
-        }} />
-       <FlatList data={CATEGORIES} renderItem={renderGridItem} numColumns={2} />
+            <Button title='Press me' onPress={() => {
+                console.log('clicked')
+                navigation.navigate('CategoryMeals',{
+                    categoryId: '1'})
+            }} />
+        <FlatList data={CATEGORIES} renderItem={renderGridItem} numColumns={2} />
        </View>
     )
 };
@@ -39,11 +39,11 @@ const CategoriesScreen = ({navigation}) => {
 export const screenOptions = navData => {
     return{
     headerTitle: "Meal Categories",
-    // headerLeft:() => (<HeaderButtons HeaderButtonComponent={HeaderButton}>
-    //     <Item title="Menu" iconName='ios-menu' onPress={() => {
-    //         navData.navigation.toggleDrawer();
-    //     }}/>
-    // </HeaderButtons>)
+    headerLeft:() => (<HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item title="Menu" iconName='ios-menu' onPress={() => {
+            navData.navigation.toggleDrawer();
+        }}/>
+    </HeaderButtons>)
     }
 };
 
