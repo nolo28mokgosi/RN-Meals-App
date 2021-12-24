@@ -98,4 +98,7 @@ const AppNavigator = () => {
         </NavigationContainer>
     );
 }
+
+///CreateSwitchNavigator in latest
+//**Create Auth Stack */
 export default AppNavigator;

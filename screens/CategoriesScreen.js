@@ -25,14 +25,7 @@ const CategoriesScreen = ({navigation}) => {
     }
 
     return(
-        <View>
-            <Button title='Press me' onPress={() => {
-                console.log('clicked')
-                navigation.navigate('CategoryMeals',{
-                    categoryId: '1'})
-            }} />
         <FlatList data={CATEGORIES} renderItem={renderGridItem} numColumns={2} />
-       </View>
     )
 };
 
