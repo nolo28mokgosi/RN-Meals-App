@@ -107,4 +107,4 @@ const MainNavigator = createDrawerNavigator({
     }
 });
 
- export default createAppContainer(MainNavigator);//MainNavigator);
+ export default createAppContainer(MainNavigator);

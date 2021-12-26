@@ -29,7 +29,7 @@ const CategoriesScreen = ({navigation}) => {
     )
 };
 
-export const screenOptions = navData => {
+CategoriesScreen.navigationOptions = navData => {
     return{
     headerTitle: "Meal Categories",
     headerLeft:() => (<HeaderButtons HeaderButtonComponent={HeaderButton}>

@@ -18,7 +18,9 @@ const store = createStore(rootReducer);
 export default function App() {
   return (
     // <Provider store={store}> <RecipeNavigator /></Provider> );
-    <MealsNavigator />
+    <Provider store={store}><MealsNavigator /></Provider>
+    // <MealsNavigator />
+
   );
 }
 
